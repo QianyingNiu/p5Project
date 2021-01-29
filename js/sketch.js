@@ -44,5 +44,6 @@ function draw() {
   //point is only x, y coordinates
   point(mouseX, mouseY);
   print(mouseX);
-
+  strokeWeight(20);
+  line(30, 200, 800, 600);
 }
