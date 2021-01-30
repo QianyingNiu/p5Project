@@ -21,7 +21,7 @@ function setup() {
   // create canvas 500 by 500 px创建画布
   createCanvas(windowWidth, windowHeight);
   //刷新背景换色 rgb r两个数值控制变色速度
-  background(random(100, 150), random(255), random(255));
+  //background(random(100, 150), random(255), random(255));
   //print(windowWidth);查看网页宽
   //change rectangle x,y coordinates to center of rect矩形中心
   rectMode(CENTER);
@@ -35,7 +35,7 @@ function setup() {
 function draw() {
   background(random(100, 150), random(255), random(255));
 
-  image(mac, windowWidth/2, windowHeight/2);
+  //image(mac, windowWidth/2, windowHeight/2);
 
   smooth();
   //styles for the ellipse圆形颜色和描边
@@ -71,4 +71,6 @@ function draw() {
 
   strokeWeight(10);
   line(pointX, pointY, 700, 500);
+
+  image(mac, windowWidth/2, windowHeight/2);
 }
