@@ -1,76 +1,85 @@
-let ellipseX = 300;
-let ellipseY = 500;
+////////////////////////////////////////////刷新跟新位置 矢量图形
+let ellipseX = 80;
+let ellipseY = 100;
 
-let pointX = 100;
-let pointY = 200;
+////////////////////////////////////////////刷新跟新位置 图片
+let monkeyX = 40;
+let monkeyY = 40;
 
-let mac;
-let mouse;
-let loveGIF;
+////////////////////////////////////////////放入图片
+let peach;
+let monkey;
+let confuseGIF;
+let hou;
+let sai;
+let lei;
 
 function preload(){
-  mac = loadImage("images/mac.png");
-  mouse = loadImage("images/mouse.png");
-  loveGIF = loadImage("images/love.gif");
+  peach = loadImage("images/peach.png");
+  monkey = loadImage("images/monkey.png");
+  confuseGIF = createImg("images/confuse.gif");
+  hou = loadImage("images/hou.png");
+  sai = loadImage("images/sai.png");
+  lei = loadImage("images/lei.png");
 
 }
 
 function setup() {
-  // put setup code here to run once静止代码
+  ////////////////////////////////////////////静止代码
 
   // create canvas 500 by 500 px创建画布
   createCanvas(windowWidth, windowHeight);
   //刷新背景换色 rgb r两个数值控制变色速度
-  //background(random(100, 150), random(255), random(255));
+  //background(226, 253, 158);
+  background(random(200, 230), random(253), random(158));
   //print(windowWidth);查看网页宽
   //change rectangle x,y coordinates to center of rect矩形中心
-  rectMode(CENTER);
+  //rectMode(CENTER);
   imageMode(CENTER);
 
-  ellipseX = random(ellipseX, windowWidth);
-  ellipseY= random(ellipseY, windowHeight);
-  print(ellipseX, ellipseY);
+  ////////////////////////////////////////////刷新跟新位置 矢量图形
+  //ellipseX = random(ellipseX, windowWidth);
+  //ellipseY = random(ellipseY, windowHeight);
+
+  //刷新跟新位置 图片
+  monkeyX = random(monkeyX, windowWidth);
+  monkeyY = random(monkeyY, windowHeight);
+
+  //noCursor();
+  //print(ellipseX, ellipseY);
 }
 
 function draw() {
-  background(random(100, 150), random(255), random(255));
+  ////////////////////////////////////////////动态代码/画形状
+
+  //background(random(200, 230), random(253), random(158));
 
   //image(mac, windowWidth/2, windowHeight/2);
-
   smooth();
-  //styles for the ellipse圆形颜色和描边
-  noStroke();
-  // put drawing code here to run in a loop动态代码/画形状
-  ellipse(ellipseX, ellipseY, 150, 150);
 
-  //styles for the rect矩形颜色和描边
-  stroke(100, 255, 80);
-  strokeWeight(20);
-  fill(50, 200, 120);
-  rect(800, 400, 200, 300);
+  ////////////////////////////////////////////刷新跟新位置 矢量图形
+  //noStroke();
+  //ellipse(ellipseX, ellipseY, 20, 20);
+  //刷新跟新位置 图片
+  image(monkey, monkeyX, monkeyY, 64, 64);
 
-  //styles for the triangle三角形颜色和描边
-  strokeWeight(20);
-  fill(50, 30, 120);
-  triangle(1200, 50, 1300, 600, 950, 400);
 
-  stroke(random(100, 150), random(255), random(255));
-  noFill();
-  triangle(300, 400, 100, 400, mouseX, mouseY);
+  ////////////////////////////////////////////鼠标轨迹实时跟踪
+  //fill(120);
+  //stroke(40, 100, 100, 40);
+  //strokeWeight(10);
+  //point(mouseX, mouseY);
 
-  //styles for the point鼠标轨迹实时跟踪
-  fill(120);
-  stroke(40, 280, 100);
-  strokeWeight(20);
-  //point is only x, y coordinates
-  point(mouseX, mouseY);
-  point(pointX, pointY);
-  //print(mouseX);
-  strokeWeight(20);
-  line(30, 200, 800, 600);
+  //图片位置/特效
+  confuseGIF.position(350, 220);
+  image(hou, 200, 300, 139, mouseY);
+  image(sai, 600, 100, 139, mouseY);
+  image(lei, 1000, 300, 139, mouseY);
+  //image(lei, windowWidth/2, windowHeight/2, 400, mouseY);
+  //image(tamagotchi, mouseX, mouseY, 380, 380);
+  //image(furby, mouseX, mouseY, 409, 470);
 
-  strokeWeight(10);
-  line(pointX, pointY, 700, 500);
-
-  image(mac, windowWidth/2, windowHeight/2);
+  ////////////////////////////////////////////图片轨迹实时跟踪
+  image(peach, mouseX, mouseY, 16.1, 17.05);
+  print(mouseX);
 }
